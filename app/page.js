@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';  
-import './styles/quizPage.css';  
+import './styles/quizPage.css';
+import './globals.css';  
 
 export default function HomePage() {
   const [selectedTopic, setSelectedTopic] = useState('');
