@@ -50,7 +50,7 @@ export default function HomePage() {
             <Image src="/img/html.png" alt="HTML" width={24} height={24} /> HTML
           </button>
           <button onClick={() => handleStartQuiz('javascript')}>
-            <Image src="/img/js.png" alt="JavaScript" width={24} height={24} /> JavaScript
+            <Image src="/img/javascript.png" alt="JavaScript" width={24} height={24} /> JavaScript
           </button>
           <button onClick={() => handleStartQuiz('css')}>
             <Image src="/img/css.png" alt="CSS" width={24} height={24} /> CSS
