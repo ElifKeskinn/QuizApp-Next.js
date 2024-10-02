@@ -1,13 +1,22 @@
-import { FaSun, FaMoon } from 'react-icons/fa';
-import '../styles/ThemeToggle.css';
+"use client";
+
+import React, { useEffect } from 'react';
+import styles from '../styles/themeToggle.css';
 
 const ThemeToggle = ({ isDarkMode, toggleTheme }) => {
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  }, [isDarkMode]); 
+
   return (
     <div className="theme-toggle" onClick={toggleTheme}>
-      {isDarkMode ? <FaMoon className="icon moon-icon" /> : <FaSun className="icon sun-icon" />}
-      <div className={`toggle-slider ${isDarkMode ? 'dark' : 'light'}`}>
-        <div className="toggle-circle"></div>
-      </div>
+      {isDarkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
     </div>
   );
 };
