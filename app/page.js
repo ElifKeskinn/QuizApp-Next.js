@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import './styles/quizPage.css';
@@ -14,6 +14,7 @@ export default function HomePage() {
     setSelectedTopic(topic);
     router.push(`/quiz/${topic}`);
   };
+
 
   return (
     <div className="StartPage">
