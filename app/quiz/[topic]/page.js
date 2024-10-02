@@ -3,7 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Question from '../../components/Question';
 import ProgressBar from '../../components/ProgressBar';
-import ThemeToggle from '../../components/ThemeToggle';
+import ThemeToggle from '@/app/components/ThemeToggle';
+import '../../styles/resultsPage.css';
+import '../../styles/quizPage.css';
 
 const QuizPage = ({ params }) => {
   const { topic } = params; 
@@ -73,10 +75,18 @@ const QuizPage = ({ params }) => {
   }, [isDarkMode]);
 
   const renderResults = () => (
-    <div className="results-page">
-      <h1>Quiz Completed</h1>
-      <h2>Correct Answers: {correctAnswersCount} / {questions.length}</h2>
-      <button onClick={() => window.location.href = '/'}>Go to Home</button>
+    <div className="resultspage">
+      <div className="left">
+        <h1>Sınav Tamamlandı</h1>
+        <h1>Skorunuz...</h1>
+      </div>
+      <div className="right">
+        <div className="resultContainer">
+          <div className="score">{correctAnswersCount}</div>
+          <h6>Toplam soru: {questions.length}</h6>
+        </div>
+        <button className="PlayBtn" onClick={() => window.location.href = '/'}>Tekrar Dene</button>
+      </div>
     </div>
   );
 
