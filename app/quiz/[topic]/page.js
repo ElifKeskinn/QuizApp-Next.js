@@ -38,12 +38,10 @@ const QuizPage = ({ params }) => {
 
   const handleSubmitAnswer = () => {
     setIsSubmitted(true);
-
     const question = questions[currentQuestionIndex];
     if (selectedAnswer === question.answer) {
       setCorrectAnswersCount(prevCount => prevCount + 1);
     }
-
     setTimeout(() => {
       setIsSubmitted(false);
       if (currentQuestionIndex < questions.length - 1) {
@@ -100,20 +98,18 @@ const QuizPage = ({ params }) => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
-          {questions.length > 0 && (
-            <div>
-              <Question
-                question={questions[currentQuestionIndex]}
-                onAnswerSelect={handleAnswerSelection}
-                selectedAnswer={selectedAnswer}
-                onSubmitAnswer={handleSubmitAnswer}
-                isSubmitted={isSubmitted}
-              />
-              <ProgressBar progress={(currentQuestionIndex + 1) / questions.length * 100} />
-            </div>
-          )}
-        </div>
+        questions.length > 0 && (
+          <div>
+            <Question
+              question={questions[currentQuestionIndex]}
+              onAnswerSelect={handleAnswerSelection}
+              selectedAnswer={selectedAnswer}
+              onSubmitAnswer={handleSubmitAnswer}
+              isSubmitted={isSubmitted}
+            />
+            <ProgressBar progress={(currentQuestionIndex + 1) / questions.length * 100} />
+          </div>
+        )
       )}
     </>
   );
