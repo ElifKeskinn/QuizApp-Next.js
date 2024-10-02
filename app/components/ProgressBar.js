@@ -1,4 +1,5 @@
-  import '../styles/ProgressBar.css';
+ 'use server'
+ import '../styles/ProgressBar.css';
 
 const ProgressBar = ({ progress }) => (
   <div className="progress-bar">

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import styles from '../styles/themeToggle.css';
 
 const ThemeToggle = ({ isDarkMode, toggleTheme }) => {

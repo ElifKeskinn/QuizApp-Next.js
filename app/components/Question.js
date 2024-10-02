@@ -1,6 +1,4 @@
-import React from 'react';
-
-
+'use server'
 const Question = ({ question, onAnswerSelect, selectedAnswer, onSubmitAnswer, isSubmitted }) => (
   <div className="question">
     <h2>{question.question}</h2>
