@@ -1,4 +1,4 @@
- 'use server'
+ 'use client'
  import '../styles/ProgressBar.css';
 
 const ProgressBar = ({ progress }) => (

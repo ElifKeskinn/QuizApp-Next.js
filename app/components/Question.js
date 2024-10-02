@@ -1,4 +1,4 @@
-'use server'
+'use client'
 const Question = ({ question, onAnswerSelect, selectedAnswer, onSubmitAnswer, isSubmitted }) => (
   <div className="question">
     <h2>{question.question}</h2>
