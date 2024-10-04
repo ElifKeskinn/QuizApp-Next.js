@@ -88,31 +88,32 @@ const QuizPage = ({ params }) => {
     </div>
   );
 
-  const renderQuiz = () => (
-    <>
-      <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <div className="selected-topic">
-        <img src={`/img/${topic}.png`} alt={topic} className="topic-image" />
-        <h2>{topic}</h2>
-      </div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        questions.length > 0 && (
-          <div>
-            <Question
-              question={questions[currentQuestionIndex]}
-              onAnswerSelect={handleAnswerSelection}
-              selectedAnswer={selectedAnswer}
-              onSubmitAnswer={handleSubmitAnswer}
-              isSubmitted={isSubmitted}
-            />
-            <ProgressBar progress={(currentQuestionIndex + 1) / questions.length * 100} />
-          </div>
-        )
-      )}
-    </>
-  );
+  
+const renderQuiz = () => (
+  <>
+    <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+    <div className="selected-topic">
+      <img src={`/img/${topic}.png`} alt={topic} className="topic-image" />
+      <h2>{topic}</h2>
+    </div>
+    {loading ? (
+      <p>Loading...</p>
+    ) : (
+      questions.length > 0 && (
+        <div>
+          <Question
+            question={questions[currentQuestionIndex]}
+            onAnswerSelect={handleAnswerSelection}
+            selectedAnswer={selectedAnswer}
+            onSubmitAnswer={handleSubmitAnswer}
+            isSubmitted={isSubmitted}
+          />
+           <ProgressBar progress={((currentQuestionIndex + 1) / questions.length) * 100} /> 
+        </div>
+      )
+    )}
+  </>
+);
 
   return (
     <div className={`quiz-page ${isDarkMode ? 'dark' : 'light'}`}>
